@@ -43,7 +43,7 @@ public class BusquedaBinaria {
                 derecha = medio -1;
             }
         }
-        return null;
+        return -1;
     }
         
     /** 

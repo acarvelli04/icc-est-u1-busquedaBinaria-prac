@@ -6,7 +6,7 @@ public class PersonaController {
 
     
 
-    public Integer findByName(Persona[] personas, String objetivo){
+    public Persona findByName(Persona[] personas, String objetivo){
         
         for (int i = 0; i < personas.length; i++) {                                              
                                                                
@@ -35,7 +35,7 @@ public class PersonaController {
             int comparacion=personas[medio].getNombre().compareTo(objetivo);
             //1ro validamos 
             if (comparacion == 0) {
-                return medio;
+                return personas[medio];
 
             } else if (comparacion< 0) {
                 

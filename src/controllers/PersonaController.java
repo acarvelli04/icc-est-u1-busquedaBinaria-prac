@@ -77,7 +77,11 @@ public class PersonaController {
             int medio = izquierda + (derecha-izquierda) / 2;
             //int comparacion=personas[medio].getEdad()>personas;
             //1ro validamos 
-            
+            for (int i = izquierda; i < derecha; i++) {
+                System.out.print(personas[i].getEdad() + "|");
+                
+            }
+            System.out.println("");
             System.out.print("Medio= " + medio + ", Derecha= " + derecha + ", Izquierda= " + izquierda + ", valorCentro= " + personas[medio].getEdad());
             if (personas[medio].getEdad() == valor) {
                 System.out.println("-----> ENCONTRADO");

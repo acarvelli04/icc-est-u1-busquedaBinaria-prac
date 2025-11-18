@@ -22,4 +22,14 @@ public class ShowConsole {
             System.out.println("No existe una persona con el nombre: " + nombreBuscado);
         }
     }
+
+    public void showPersonAge(Persona persona, int edadBuscada) {
+        if (persona != null) {
+            System.out.println("Persona encontrada:");
+            System.out.println("Nombre: " + persona.getNombre());
+            System.out.println("Edad: " + persona.getEdad());
+        } else {
+            System.out.println("No existe una persona con: " + edadBuscada + " años");
+        }
+    }
 }

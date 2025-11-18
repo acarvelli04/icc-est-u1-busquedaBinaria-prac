@@ -48,4 +48,51 @@ public class PersonaController {
 
         
     }
+
+    public Persona findByAgege(Persona[] personas, int valor){
+        
+        for (int i = 0; i < personas.length; i++) {                                              
+                                                               
+            int pos = i;                                                                                          
+            for (int j = i+1; j < personas.length; j++) {                                       
+                if (personas[j].getEdad()>personas[pos].getEdad()) {           
+
+                                                                 
+                    pos = j;
+                }
+
+
+            }
+            if (pos != i) {                                                                       
+                Persona temp = personas[i];
+                personas[i] = personas[pos];
+                personas[pos] = temp;
+            }
+        }
+
+        int izquierda = 0;
+        int derecha = personas.length-1;
+
+        while (izquierda<=derecha) {
+            int medio = izquierda + (derecha-izquierda) / 2;
+            //int comparacion=personas[medio].getEdad()>personas;
+            //1ro validamos 
+            
+            System.out.print("Medio= " + medio + ", Derecha= " + derecha + ", Izquierda= " + izquierda + ", valorCentro= " + personas[medio].getEdad());
+            if (personas[medio].getEdad() == valor) {
+                System.out.println("-----> ENCONTRADO");
+                return personas[medio];
+
+            } else if (personas[medio].getEdad() > valor) {
+                System.out.println("-----> Derecha");
+                izquierda = medio +1;
+            } else {
+                System.out.println("-----> Izquierda");
+                derecha = medio -1;
+            }
+        }
+        return null;
+
+        
+    }
 }

@@ -35,7 +35,11 @@ public class App {
         };
 
         Persona buscado = pC.findByName(people, "Juan");
-
         sC.showPersonResult(buscado, "Juan");
+
+        Persona detectaViejos = pC.findByAgege(people, 28);
+        sC.showPersonAge(detectaViejos, 28);
+
+        
     }
 }
